@@ -3,7 +3,7 @@ import { LoginHelper } from '../helpers/LoginHelper';
 import { InventoryPage } from '../pages/InventoryPage/InventoryPage';
 
 test.describe('Login', () => {
-  test('LoginStandardUser', async ({ page }) => {
+  test('LoginStandardUser @TC_001', async ({ page }) => {
     const loginHelper = new LoginHelper(page);
     const inventoryPage = new InventoryPage(page);
 

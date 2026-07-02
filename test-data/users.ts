@@ -23,4 +23,9 @@ export const Users = {
     username: 'visual_user',
     password: 'secret_sauce',
   },
+
+  INVALID_USER: {
+  username: 'invalid_user',
+  password: 'secret_sauce',
+},
 } as const;

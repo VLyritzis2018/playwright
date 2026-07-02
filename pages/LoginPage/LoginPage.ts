@@ -7,6 +7,7 @@ export class LoginPage {
   private readonly usernameInput: Locator;
   private readonly passwordInput: Locator;
   private readonly loginButton: Locator;
+  private readonly errorMessage: Locator;
 
   constructor(page: Page) {
     this.page = page;
@@ -14,6 +15,7 @@ export class LoginPage {
     this.usernameInput = page.locator('[data-test="username"]');
     this.passwordInput = page.locator('[data-test="password"]');
     this.loginButton = page.locator('[data-test="login-button"]');
+    this.errorMessage = page.locator('[data-test="error"]');
   }
 
   async navigate(): Promise<void> {
@@ -43,4 +45,8 @@ export class LoginPage {
     await expect(this.passwordInput).toBeVisible();
     await expect(this.loginButton).toBeVisible();
   }
+
+  async verifyErrorMessage(expectedMessage: string): Promise<void> {
+  await expect(this.errorMessage).toHaveText(expectedMessage);
+}
 }

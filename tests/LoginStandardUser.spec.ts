@@ -14,16 +14,16 @@ test.describe('Login', () => {
     });
 
     test('LoginInvalidUser @login @regression @TC_002', async ({ page }) => {
-    const loginHelper = new LoginHelper(page);
-    const loginPage = new LoginPage(page);
+        const loginHelper = new LoginHelper(page);
+        const loginPage = new LoginPage(page);
 
-    await loginHelper.login(
-        Users.INVALID_USER.username,
-        Users.INVALID_USER.password
-    );
+        await loginHelper.login(
+            Users.INVALID_USER.username,
+            Users.INVALID_USER.password
+        );
 
-    await loginPage.verifyErrorMessage(
-        'Epic sadface: Username and password do not match any user in this service'
-    );
+        await loginPage.verifyErrorMessage(
+            'Epic sadface: Username and password do not match any user in this service'
+        );
     });
 });

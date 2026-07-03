@@ -1,0 +1,170 @@
+# Git Workflow
+
+## 1. Make sure you are on the latest main
+
+```bash
+git checkout main
+git pull origin main
+```
+
+---
+
+## 2. Create a new feature branch
+
+```bash
+git checkout -b feature/<feature-name>
+```
+
+Example:
+
+```bash
+git checkout -b feature/login-invalid-user
+```
+
+---
+
+## 3. Check the current status
+
+```bash
+git status
+```
+
+---
+
+## 4. Stage all changes
+
+```bash
+git add .
+```
+
+Or stage specific files:
+
+```bash
+git add path/to/file
+```
+
+---
+
+## 5. Commit the changes
+
+```bash
+git commit -m "feat: add invalid user login test"
+```
+
+Examples:
+
+```text
+feat: add logout functionality
+fix: correct login locator
+test: add login regression tests
+docs: update contributing guide
+chore: update TypeScript configuration
+```
+
+---
+
+## 6. Push the feature branch
+
+First push:
+
+```bash
+git push -u origin feature/<feature-name>
+```
+
+Example:
+
+```bash
+git push -u origin feature/login-invalid-user
+```
+
+Subsequent pushes:
+
+```bash
+git push
+```
+
+---
+
+## 7. Create a Pull Request
+
+- Review changes
+- Add title
+- Add description
+- Merge into `main`
+
+---
+
+## 8. Synchronize local main
+
+```bash
+git checkout main
+git pull origin main
+```
+
+---
+
+## 9. Delete the feature branch
+
+Delete locally:
+
+```bash
+git branch -d feature/<feature-name>
+```
+
+Example:
+
+```bash
+git branch -d feature/login-invalid-user
+```
+
+Delete remotely (if not deleted automatically):
+
+```bash
+git push origin --delete feature/<feature-name>
+```
+
+---
+
+## Useful Commands
+
+Current status:
+
+```bash
+git status
+```
+
+Current branch:
+
+```bash
+git branch
+```
+
+View commit history:
+
+```bash
+git log --oneline --graph --decorate --all
+```
+
+View remotes:
+
+```bash
+git remote -v
+```
+
+Discard tracked changes:
+
+```bash
+git restore .
+```
+
+Remove untracked files and folders:
+
+```bash
+git clean -fd
+```
+
+Fetch remote changes without merging:
+
+```bash
+git fetch
+```
